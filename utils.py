@@ -37,9 +37,23 @@ def is_prime(number):
         i += 6
     return True
 
+
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
         for j in range(0, n-i-1):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
+
+
+def decrypter(encr_mass: str, key: int):
+    decr_mass = ''
+    for symbol in encr_mass:
+        if symbol != ' ':
+            symbol = (chr(ord(symbol) - key))
+            decr_mass += symbol
+
+        else:
+            decr_mass += symbol
+
+    return decr_mass
